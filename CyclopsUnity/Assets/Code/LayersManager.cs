@@ -6,6 +6,8 @@ public class LayersManager : MonoBehaviour
 {
     public List<GameObject> layers;
 
+
+
     void Start()
     {
         ActivateLayer(0);
@@ -13,21 +15,17 @@ public class LayersManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha0))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             ActivateLayer(0);
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha1))
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             ActivateLayer(1);
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            ActivateLayer(2);
-        }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            ActivateLayer(3);
+            ActivateLayer(2);
         }
     }
 
