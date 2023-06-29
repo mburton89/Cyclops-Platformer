@@ -6,10 +6,12 @@ public class PlayArea : MonoBehaviour
 {
     public Transform currentCheckpoint; //create checkpoint manager
     public GameObject player;
+    private Transform playerPosition;
 
     void Start()
     {
-        
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerPosition = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     void Update()
@@ -17,11 +19,14 @@ public class PlayArea : MonoBehaviour
            
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    void OnTriggerExit2D(Collider2D other)
     {
-        if (gameObject.tag == "Player")
+        Debug.Log("Something has left");
+
+        if (other.tag == "Player")
         {
-            gameObject.transform.position = currentCheckpoint.transform.position;
+            Debug.Log("Player has left");
+            playerPosition.position = currentCheckpoint.position;
         }
     }
 }
