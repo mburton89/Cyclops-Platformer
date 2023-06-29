@@ -44,19 +44,27 @@ public class HUD : MonoBehaviour
         }
     }
 
+    public void UseNoLens()
+    {
+        glassesImage.transform.localScale = Vector3.zero;
+    }
+
     public void UseBlueLens()
     {
+        glassesImage.transform.localScale = Vector3.one;
         glassesImage.transform.DOMoveX(glassesXPosition1, secondsToAnimate, false);
     }
 
     public void UseRedLens()
     {
+        glassesImage.transform.localScale = Vector3.one;
         glassesImage.sprite = redGlasses;
         glassesImage.transform.DOMoveX(glassesXPosition2, secondsToAnimate, false);
     }
 
     public void UseYellowLens()
     {
+        glassesImage.transform.localScale = Vector3.one;
         glassesImage.sprite = yellowGlasses;
         glassesImage.transform.DOMoveX(glassesXPosition2, secondsToAnimate, false);
     }
