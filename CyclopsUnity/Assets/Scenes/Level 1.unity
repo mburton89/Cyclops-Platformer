@@ -670,6 +670,7 @@ GameObject:
   m_Component:
   - component: {fileID: 203276412}
   - component: {fileID: 203276413}
+  - component: {fileID: 203276414}
   m_Layer: 6
   m_Name: Red
   m_TagString: Untagged
@@ -705,6 +706,21 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!114 &203276414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 203276411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0848e0940461b5243ab2f8cee032e4b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 1367025881}
+  tilemapCollider2D: {fileID: 1367025880}
+  isActive: 0
 --- !u!1 &344908801
 GameObject:
   m_ObjectHideFlags: 0
@@ -3315,6 +3331,10 @@ MonoBehaviour:
   - {fileID: 770232942}
   - {fileID: 203276411}
   - {fileID: 1085681955}
+  blueLayer: {fileID: 770232945}
+  redLayer: {fileID: 203276414}
+  yellowLayer: {fileID: 1085681958}
+  switchesBetweenBlueRed: 1
 --- !u!1 &604478071 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 605054480241019580, guid: 92b2617eb03b3824eb4ea8e285f83f96, type: 3}
@@ -3469,6 +3489,7 @@ GameObject:
   m_Component:
   - component: {fileID: 770232943}
   - component: {fileID: 770232944}
+  - component: {fileID: 770232945}
   m_Layer: 6
   m_Name: Blue
   m_TagString: Untagged
@@ -3504,6 +3525,21 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!114 &770232945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770232942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0848e0940461b5243ab2f8cee032e4b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 163060918}
+  tilemapCollider2D: {fileID: 163060917}
+  isActive: 0
 --- !u!1 &793476415
 GameObject:
   m_ObjectHideFlags: 0
@@ -3594,6 +3630,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Red Button
       objectReference: {fileID: 0}
+    - target: {fileID: 5348022037261078516, guid: 4888df8d253d76947a2cd8634a204e28, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4888df8d253d76947a2cd8634a204e28, type: 3}
 --- !u!1 &1012409767
@@ -3606,6 +3646,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1012409768}
   - component: {fileID: 1012409769}
+  - component: {fileID: 1012409770}
   m_Layer: 6
   m_Name: Green
   m_TagString: Untagged
@@ -3641,6 +3682,21 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!114 &1012409770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012409767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0848e0940461b5243ab2f8cee032e4b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 527363694}
+  tilemapCollider2D: {fileID: 527363698}
+  isActive: 0
 --- !u!1 &1085681955
 GameObject:
   m_ObjectHideFlags: 0
@@ -3651,6 +3707,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1085681956}
   - component: {fileID: 1085681957}
+  - component: {fileID: 1085681958}
   m_Layer: 6
   m_Name: Yellow
   m_TagString: Untagged
@@ -3686,6 +3743,21 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!114 &1085681958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085681955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0848e0940461b5243ab2f8cee032e4b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 1818653438}
+  tilemapCollider2D: {fileID: 1818653437}
+  isActive: 0
 --- !u!1 &1356944057
 GameObject:
   m_ObjectHideFlags: 0
