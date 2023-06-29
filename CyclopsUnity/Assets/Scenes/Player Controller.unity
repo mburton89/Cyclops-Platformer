@@ -2163,6 +2163,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 607609222}
     m_Modifications:
+    - target: {fileID: 4626461020350707490, guid: beb72c7068e6209409c7e26a61db046c, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5018032196593095848, guid: beb72c7068e6209409c7e26a61db046c, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2909,7 +2913,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1982102797}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.2, y: -0.2, z: 0}
+  m_LocalPosition: {x: 21.09, y: 1.28, z: 0}
   m_LocalScale: {x: 50.035454, y: 19.143217, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2929,6 +2933,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentCheckpoint: {fileID: 1069081056}
+  player: {fileID: 0}
 --- !u!1001 &605054479947516729
 PrefabInstance:
   m_ObjectHideFlags: 0
