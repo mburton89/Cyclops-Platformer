@@ -6,26 +6,30 @@ public class LayersManager : MonoBehaviour
 {
     public List<GameObject> layers;
 
+    public Layer blueLayer;
+    public Layer redLayer;
+    public Layer yellowLayer;
 
+    public bool switchesBetweenBlueRed;
 
     void Start()
     {
-        ActivateLayer(0);
+        DeacativateAllLayers();
+        blueLayer.Activate();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
-            ActivateLayer(0);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            ActivateLayer(1);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            ActivateLayer(2);
+            if (switchesBetweenBlueRed)
+            {
+                ToggleBlueAndRed();
+            }
+            else
+            {
+                ToggleBlueAndYellow();
+            }
         }
     }
 
@@ -37,5 +41,40 @@ public class LayersManager : MonoBehaviour
         }
 
         layers[index].SetActive(true);
+    }
+
+    public void DeacativateAllLayers()
+    {
+        blueLayer.Deactivate();
+        redLayer.Deactivate();
+        yellowLayer.Deactivate();
+    }
+
+    public void ToggleBlueAndRed()
+    {
+        if (blueLayer.isActive)
+        {
+            blueLayer.Deactivate();
+            redLayer.Activate();
+        }
+        else
+        {
+            redLayer.Deactivate();
+            blueLayer.Activate();
+        }
+    }
+
+    public void ToggleBlueAndYellow()
+    {
+        if (blueLayer.isActive)
+        {
+            blueLayer.Deactivate();
+            yellowLayer.Activate();
+        }
+        else
+        {
+            yellowLayer.Deactivate();
+            blueLayer.Activate();
+        }
     }
 }
