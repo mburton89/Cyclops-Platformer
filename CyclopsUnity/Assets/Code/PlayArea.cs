@@ -9,7 +9,7 @@ public class PlayArea : MonoBehaviour
 
     void Start()
     {
-        
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     void Update()
@@ -21,7 +21,7 @@ public class PlayArea : MonoBehaviour
     {
         if (gameObject.tag == "Player")
         {
-            gameObject.transform.position = currentCheckpoint.transform.position;
+            player.transform.position = currentCheckpoint.transform.position;
         }
     }
 }
