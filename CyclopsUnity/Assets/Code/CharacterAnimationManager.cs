@@ -65,6 +65,7 @@ public class CharacterAnimationManager : MonoBehaviour
         death.localScale = Vector3.zero;
     }
 
+
     public void ShowBlueLens()
     {
         ResetLenses();

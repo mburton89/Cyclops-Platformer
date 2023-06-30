@@ -16,6 +16,8 @@ public class HUD : MonoBehaviour
     public float glassesXPosition2;
     public float secondsToAnimate;
 
+    public GameObject blueGlassesObject;
+    public GameObject redGlassesObject;
     private void Awake()
     {
         Instance = this;
@@ -30,14 +32,18 @@ public class HUD : MonoBehaviour
     public void UseBlueLens()
     {
         glassesImage.transform.localScale = Vector3.one;
-        glassesImage.transform.DOMoveX(glassesXPosition1, secondsToAnimate, false);
+        //glassesImage.transform.DOMoveX(glassesXPosition1, secondsToAnimate, false);
+        blueGlassesObject.SetActive(true);
+        redGlassesObject.SetActive(false);
     }
 
     public void UseRedLens()
     {
         glassesImage.transform.localScale = Vector3.one;
-        glassesImage.sprite = redGlasses;
-        glassesImage.transform.DOMoveX(glassesXPosition2, secondsToAnimate, false);
+        //glassesImage.sprite = redGlasses;
+        //glassesImage.transform.DOMoveX(glassesXPosition2, secondsToAnimate, false);
+        blueGlassesObject.SetActive(false);
+        redGlassesObject.SetActive(true);
     }
 
     public void UseYellowLens()
