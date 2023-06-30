@@ -1238,14 +1238,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Credits
-
-
-    Person 1
-
-    Person 2
-
-    Person 3'
+  m_text: See our Itch Page
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7a3f57d77d86bd544886f61019a26c7e, type: 2}
   m_sharedMaterial: {fileID: -7257411659262726763, guid: 7a3f57d77d86bd544886f61019a26c7e, type: 2}

@@ -38,12 +38,14 @@ public class SoundManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
         }
         else
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
+
+        currentLevelMusic = levelMusic1;
     }
 
     public void PlaySound(SoundEffect soundEffect)
@@ -111,6 +113,6 @@ public class SoundManager : MonoBehaviour
             currentLevelMusic = levelMusic4;
         }
 
-        currentLevelMusic.DOFade(1, 1);
+        currentLevelMusic.DOFade(0.6f, 1);
     }
 }
