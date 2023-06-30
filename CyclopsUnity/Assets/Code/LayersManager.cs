@@ -77,4 +77,10 @@ public class LayersManager : MonoBehaviour
             blueLayer.Activate();
         }
     }
+
+    public void ActivateRedLayer()
+    {
+        redLayer.Activate();
+        blueLayer.Deactivate();
+    }
 }

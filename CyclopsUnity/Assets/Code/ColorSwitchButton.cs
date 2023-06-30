@@ -16,11 +16,11 @@ public class ColorSwitchButton : MonoBehaviour
 
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.F));
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        layersManager.ActivateLayer(colorLayer);   
+        layersManager.ActivateRedLayer();
     }
 }
