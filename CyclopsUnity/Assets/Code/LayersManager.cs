@@ -12,6 +12,8 @@ public class LayersManager : MonoBehaviour
 
     public bool switchesBetweenBlueRed;
 
+    public bool canSwitch;
+
     void Start()
     {
         DeacativateAllLayers();
@@ -20,7 +22,7 @@ public class LayersManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Return) && canSwitch)
         {
             if (switchesBetweenBlueRed)
             {
@@ -94,5 +96,11 @@ public class LayersManager : MonoBehaviour
     {
         redLayer.Activate();
         blueLayer.Deactivate();
+    }
+
+    public void ActivateBlueLayer()
+    {
+        redLayer.Deactivate();
+        blueLayer.Activate();
     }
 }
