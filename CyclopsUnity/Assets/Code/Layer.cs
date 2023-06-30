@@ -13,13 +13,13 @@ public class Layer : MonoBehaviour
 
     public void Deactivate()
     {
-        tilemap.color = new Color(1, 1, 1, 0.2f);
+        tilemap.color = new Color(tilemap.color.r, tilemap.color.g, tilemap.color.b, 0.2f);
         tilemapCollider2D.enabled = false;
         isActive = false;
     }
     public void Activate()
     {
-        tilemap.color = new Color(1, 1, 1, 1);
+        tilemap.color = new Color(tilemap.color.r, tilemap.color.g, tilemap.color.b, 1);
         tilemapCollider2D.enabled = true;
         isActive = true;
     }

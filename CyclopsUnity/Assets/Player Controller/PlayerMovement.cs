@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
         if ((Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+            SoundManager.Instance.PlaySound(SoundManager.SoundEffect.Jump);
         }
 
         if ((Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && rb.velocity.y > 0f)
@@ -33,6 +34,29 @@ public class PlayerMovement : MonoBehaviour
         }
 
         Flip();
+
+        if (IsGrounded())
+        {
+            if (rb.velocity.x > 0.1f || rb.velocity.x < -0.1f)
+            {
+                CharacterAnimationManager.Instance.ShowWalk();
+            }
+            else
+            {
+                CharacterAnimationManager.Instance.ShowIdle();
+            }
+        }
+        else
+        {
+            if (rb.velocity.y > 0)
+            {
+                CharacterAnimationManager.Instance.ShowJump();
+            }
+            else
+            {
+                CharacterAnimationManager.Instance.ShowFall();
+            }
+        }
     }
 
     private void FixedUpdate()

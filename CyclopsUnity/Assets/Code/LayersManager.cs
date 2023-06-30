@@ -56,12 +56,18 @@ public class LayersManager : MonoBehaviour
         {
             blueLayer.Deactivate();
             redLayer.Activate();
+            HUD.Instance.UseRedLens();
+            CharacterAnimationManager.Instance.ShowRedLens();
         }
         else
         {
             redLayer.Deactivate();
             blueLayer.Activate();
+            HUD.Instance.UseBlueLens();
+            CharacterAnimationManager.Instance.ShowBlueLens();
         }
+
+        SoundManager.Instance.PlaySound(SoundManager.SoundEffect.Glasses);
     }
 
     public void ToggleBlueAndYellow()
@@ -70,12 +76,18 @@ public class LayersManager : MonoBehaviour
         {
             blueLayer.Deactivate();
             yellowLayer.Activate();
+            HUD.Instance.UseYellowLens();
+            CharacterAnimationManager.Instance.ShowYellowLens();
         }
         else
         {
             yellowLayer.Deactivate();
             blueLayer.Activate();
+            HUD.Instance.UseBlueLens();
+            CharacterAnimationManager.Instance.ShowBlueLens();
         }
+
+        SoundManager.Instance.PlaySound(SoundManager.SoundEffect.Glasses);
     }
 
     public void ActivateRedLayer()
