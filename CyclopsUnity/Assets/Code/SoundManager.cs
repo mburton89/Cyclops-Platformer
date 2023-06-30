@@ -12,12 +12,16 @@ public class SoundManager : MonoBehaviour
     public AudioSource jumpSound;
     public AudioSource hurtSound;
     public AudioSource buttonClickSound;
+    public AudioSource glassesSwoosh;
+    public AudioSource switchTrigger;
 
     public enum SoundEffect
     {
         Jump,
         Hurt,
-        ButtonClick
+        ButtonClick,
+        Glasses,
+        SwitchTrigger
     }
 
     private void Awake()
@@ -51,6 +55,16 @@ public class SoundManager : MonoBehaviour
         else if (soundEffect == SoundEffect.ButtonClick)
         {
             audioSourceToPlay = buttonClickSound;
+        }
+
+        else if (soundEffect == SoundEffect.Glasses)
+        {
+            audioSourceToPlay = glassesSwoosh;
+        }
+
+        else if (soundEffect == SoundEffect.SwitchTrigger)
+        {
+            audioSourceToPlay = switchTrigger;
         }
 
         else
