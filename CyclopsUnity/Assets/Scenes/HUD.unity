@@ -259,6 +259,11 @@ MonoBehaviour:
   - {fileID: 1221229907}
   - {fileID: 1005333109}
   - {fileID: 1029111942}
+  blueLayer: {fileID: 0}
+  redLayer: {fileID: 0}
+  yellowLayer: {fileID: 0}
+  switchesBetweenBlueRed: 0
+  canSwitch: 0
 --- !u!1 &195728476
 GameObject:
   m_ObjectHideFlags: 0

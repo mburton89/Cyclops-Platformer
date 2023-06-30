@@ -10,6 +10,9 @@ public class LayersManager : MonoBehaviour
     public Layer redLayer;
     public Layer yellowLayer;
 
+    public GameObject redDeathBoxes;
+    public GameObject blueDeathBoxes;
+
     public bool switchesBetweenBlueRed;
 
     public bool canSwitch;
@@ -60,6 +63,9 @@ public class LayersManager : MonoBehaviour
             redLayer.Activate();
             HUD.Instance.UseRedLens();
             CharacterAnimationManager.Instance.ShowRedLens();
+
+            blueDeathBoxes.SetActive(false);
+            redDeathBoxes.SetActive(true);
         }
         else
         {
@@ -67,6 +73,9 @@ public class LayersManager : MonoBehaviour
             blueLayer.Activate();
             HUD.Instance.UseBlueLens();
             CharacterAnimationManager.Instance.ShowBlueLens();
+
+            blueDeathBoxes.SetActive(true);
+            redDeathBoxes.SetActive(false);
         }
 
         SoundManager.Instance.PlaySound(SoundManager.SoundEffect.Glasses);
