@@ -19,6 +19,7 @@ public class HUD : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        UseNoLens();
     }
 
     public void UseNoLens()

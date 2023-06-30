@@ -9,6 +9,8 @@ public class ColorSwitchButton : MonoBehaviour
     public int colorLayer;
     private bool isOn = false;
 
+    public bool isActivatingRed;
+
     private void Awake()
     {
 
@@ -16,11 +18,20 @@ public class ColorSwitchButton : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F));
+        //if (Input.GetKeyDown(KeyCode.F));
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        layersManager.ActivateRedLayer();
+        SoundManager.Instance.PlaySound(SoundManager.SoundEffect.SwitchTrigger);
+
+        if (isActivatingRed)
+        {
+            layersManager.ActivateRedLayer();
+        }
+        else
+        {
+            layersManager.ActivateBlueLayer();
+        }
     }
 }
