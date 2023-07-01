@@ -8,5 +8,6 @@ public class DeathBox : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         collision.transform.position = checkPointToSpawnAt.transform.position;
+        SoundManager.Instance.PlaySound(SoundManager.SoundEffect.Hurt);
     }
 }

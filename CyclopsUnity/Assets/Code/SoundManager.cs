@@ -90,7 +90,7 @@ public class SoundManager : MonoBehaviour
 
     public void PlayMusic(int level)
     {
-        currentLevelMusic.DOFade(0, 1);
+        currentLevelMusic.DOFade(0, 3);
 
         if (level == 0)
         {
@@ -113,6 +113,6 @@ public class SoundManager : MonoBehaviour
             currentLevelMusic = levelMusic4;
         }
 
-        currentLevelMusic.DOFade(0.6f, 1);
+        currentLevelMusic.DOFade(0.6f, 3);
     }
 }

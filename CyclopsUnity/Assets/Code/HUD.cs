@@ -18,10 +18,25 @@ public class HUD : MonoBehaviour
 
     public GameObject blueGlassesObject;
     public GameObject redGlassesObject;
+
+    //public Sprite okDave;
+    //public Sprite boredDave;
+    //public Sprite exciteDave;
+    //public Sprite pogDave;
+    //public Sprite hurtDave;
+    public List<Sprite> daves;
+    public Image daveImage;
+
+
     private void Awake()
     {
         Instance = this;
         UseNoLens();
+    }
+
+    private void Start()
+    {
+        StartCoroutine(CycleThruDaves());
     }
 
     public void UseNoLens()
@@ -32,7 +47,6 @@ public class HUD : MonoBehaviour
     public void UseBlueLens()
     {
         glassesImage.transform.localScale = Vector3.one;
-        //glassesImage.transform.DOMoveX(glassesXPosition1, secondsToAnimate, false);
         blueGlassesObject.SetActive(true);
         redGlassesObject.SetActive(false);
     }
@@ -40,8 +54,6 @@ public class HUD : MonoBehaviour
     public void UseRedLens()
     {
         glassesImage.transform.localScale = Vector3.one;
-        //glassesImage.sprite = redGlasses;
-        //glassesImage.transform.DOMoveX(glassesXPosition2, secondsToAnimate, false);
         blueGlassesObject.SetActive(false);
         redGlassesObject.SetActive(true);
     }
@@ -52,4 +64,27 @@ public class HUD : MonoBehaviour
         glassesImage.sprite = yellowGlasses;
         glassesImage.transform.DOMoveX(glassesXPosition2, secondsToAnimate, false);
     }
+
+    private IEnumerator CycleThruDaves()
+    {
+        daveImage.sprite = daves[0];
+        int rand = Random.Range(7, 12);
+        yield return new WaitForSeconds(rand);
+        int rand2 = Random.Range(0, daves.Count);
+        daveImage.sprite = daves[rand2];
+        yield return new WaitForSeconds(2);
+        StartCoroutine(CycleThruDaves());
+    }
+
+    //public void ShowDaveBored()
+    //{
+    //    StartCoroutine(ShowBoredDaveCo());
+    //}
+
+    //private IEnumerator ShowBoredDaveCo()
+    //{
+    //    daveImage.sprite = boredDave;
+    //    yield return new WaitForSeconds(2);
+    //    daveImage.sprite = okDave;
+    //}
 }
